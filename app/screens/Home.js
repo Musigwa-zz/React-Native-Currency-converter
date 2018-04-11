@@ -12,7 +12,11 @@ import { LastConverted } from '../components/Text';
 import { Header } from '../components/Header';
 import { connectAlert } from '../components/Alert';
 
-import { changeCurrencyAmount, swapCurrency, getInitialConversion } from '../actions/currencies';
+import {
+  changeCurrencyAmount,
+  swapCurrency,
+  getInitialConversion,
+} from '../actions/currencies';
 
 class Home extends Component {
   static propTypes = {
@@ -33,22 +37,31 @@ class Home extends Component {
     this.props.dispatch(getInitialConversion());
   };
 
-  componentWillReceiveProps = (nextProps) => {
-    if (nextProps.currencyError && nextProps.currencyError !== this.props.currencyError) {
+  componentWillReceiveProps = nextProps => {
+    if (
+      nextProps.currencyError &&
+      nextProps.currencyError !== this.props.currencyError
+    ) {
       this.props.alertWithType('error', 'Error', nextProps.currencyError);
     }
   };
 
-  handleChangeText = (text) => {
+  handleChangeText = text => {
     this.props.dispatch(changeCurrencyAmount(text));
   };
 
   handlePressBaseCurrency = () => {
-    this.props.navigation.navigate('CurrencyList', { title: 'Base Currency', type: 'base' });
+    this.props.navigation.navigate('CurrencyList', {
+      title: 'Base Currency',
+      type: 'base',
+    });
   };
 
   handlePressQuoteCurrency = () => {
-    this.props.navigation.navigate('CurrencyList', { title: 'Quote Currency', type: 'quote' });
+    this.props.navigation.navigate('CurrencyList', {
+      title: 'Quote Currency',
+      type: 'quote',
+    });
   };
 
   handleSwapCurrency = () => {
@@ -92,14 +105,17 @@ class Home extends Component {
             quote={this.props.quoteCurrency}
             conversionRate={this.props.conversionRate}
           />
-          <ClearButton onPress={this.handleSwapCurrency} text="Reverse Currencies" />
+          <ClearButton
+            onPress={this.handleSwapCurrency}
+            text="Reverse Currencies"
+          />
         </KeyboardAvoidingView>
       </Container>
     );
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   const { baseCurrency, quoteCurrency } = state.currencies;
   const conversionSelector = state.currencies.conversions[baseCurrency] || {};
   const rates = conversionSelector.rates || {};
@@ -109,7 +125,9 @@ const mapStateToProps = (state) => {
     quoteCurrency,
     amount: state.currencies.amount,
     conversionRate: rates[quoteCurrency] || 0,
-    lastConvertedDate: conversionSelector.date ? new Date(conversionSelector.date) : new Date(),
+    lastConvertedDate: conversionSelector.date
+      ? new Date(conversionSelector.date)
+      : new Date(),
     isFetching: conversionSelector.isFetching,
     primaryColor: state.theme.primaryColor,
     currencyError: state.currencies.error,

@@ -6,10 +6,10 @@ import {
   CONVERSION_ERROR,
   CONVERSION_RESULT,
 } from '../actions/currencies';
-import { database } from './db';
+import { apiBasic } from './db';
 
-
-const getLatestRate = currency => fetch(`${database.URL}/${database.END_POINT}?base=${currency}`);
+const getLatestRate = currency =>
+  fetch(`${apiBasic.URL}/${apiBasic.END_POINT}?base=${currency}`);
 
 function* fetchLatestConversionRates(action) {
   try {

@@ -20,7 +20,7 @@ class Themes extends Component {
     dispatch: PropTypes.func,
   };
 
-  handlePressTheme = (color) => {
+  handlePressTheme = color => {
     this.props.dispatch(changePrimaryColor(color));
     this.props.navigation.navigate('Home');
   };

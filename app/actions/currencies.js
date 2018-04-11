@@ -1,15 +1,15 @@
 /**
  * An action is the JS object that tells the reducer how to change its data
  * it contains the type prop/ command and the bunch of data.
-*/
+ */
 
 /**
  * * the following string constants are the action types
-*/
+ */
 
 /**
  * * the other function constants are telling the reducer how to change the data
-*/
+ */
 export const CHANGE_CURRENCY_AMOUNT = 'CHANGE_CURRENCY_AMOUNT';
 export const SWAP_CURRENCY = 'SWAP_CURRENCY';
 export const CHANGE_BASE_CURRENCY = 'CHANGE_BASE_CURRENCY';

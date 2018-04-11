@@ -15,8 +15,7 @@ class CurrencyList extends Component {
     quoteCurrency: PropTypes.string,
     primaryColor: PropTypes.string,
   };
-
-  handlePress = (currency) => {
+  handlePress = currency => {
     const { type } = this.props.navigation.state.params;
     if (type === 'base') {
       this.props.dispatch(changeBaseCurrency(currency));

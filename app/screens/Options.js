@@ -21,7 +21,12 @@ class Options extends Component {
 
   handlePressSite = () => {
     Linking.openURL('http://fixer.io').catch(() =>
-      this.props.alertWithType('error', 'Sorry!', "Fixer.io can't be opened right now."));
+      this.props.alertWithType(
+        'error',
+        'Sorry!',
+        "Fixer.io can't be opened right now.",
+      ),
+    );
   };
 
   render() {
@@ -32,14 +37,24 @@ class Options extends Component {
           text="Themes"
           onPress={this.handlePressThemes}
           customIcon={
-            <Ionicons name={`${ICON_PREFIX}-arrow-forward`} size={ICON_SIZE} color={ICON_COLOR} />
+            <Ionicons
+              name={`${ICON_PREFIX}-arrow-forward`}
+              size={ICON_SIZE}
+              color={ICON_COLOR}
+            />
           }
         />
         <Separator />
         <ListItem
           text="Fixer.io"
           onPress={this.handlePressSite}
-          customIcon={<Ionicons name={`${ICON_PREFIX}-link`} size={ICON_SIZE} color={ICON_COLOR} />}
+          customIcon={
+            <Ionicons
+              name={`${ICON_PREFIX}-link`}
+              size={ICON_SIZE}
+              color={ICON_COLOR}
+            />
+          }
         />
         <Separator />
       </ScrollView>
