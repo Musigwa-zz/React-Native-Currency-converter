@@ -1,10 +1,6 @@
+#just to upgrade the depencies of the app
 
-Merge branch 'master' of https://github.com/Musigwa/React-Native-Currency-converter
 
-# Please enter a commit message to explain why this merge is necessary,
-# especially if it merges an updated upstream into a topic branch.
-#
-# Lines starting with '#' will be ignored, and an empty message aborts
-# the commit.
+I have changed many of my codes in all files. so please checkout every part of the repo codes to make sure you're using the recent version of the app dependencies.
 
-Just to sync the changes
+#just to upgrade the depencies of the app
