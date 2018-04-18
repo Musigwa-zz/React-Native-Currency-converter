@@ -29,6 +29,7 @@
   "dependencies": {
     "@expo/vector-icons": "6.3.1",
     "babel-eslint": "^8.2.2",
+    "cache": "^2.1.0",
     "chokidar": "^2.0.3",
     "color": "3.0.0",
     "eslint-config-prettier": "^2.9.0",

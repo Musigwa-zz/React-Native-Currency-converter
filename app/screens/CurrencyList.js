@@ -1,3 +1,4 @@
+// eslint-disable 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { FlatList, StatusBar, View } from 'react-native';
@@ -8,14 +9,14 @@ import { currencies } from '../resources/data';
 import { changeBaseCurrency, changeQuoteCurrency } from '../actions/currencies';
 
 class CurrencyList extends Component {
-  static propTypes = {
-    navigation: PropTypes.object,
-    dispatch: PropTypes.func,
-    baseCurrency: PropTypes.string,
-    quoteCurrency: PropTypes.string,
-    primaryColor: PropTypes.string,
-  };
-  handlePress = currency => {
+  // static propTypes = {
+  //   navigation: PropTypes.object,
+  //   dispatch: PropTypes.func,
+  //   baseCurrency: PropTypes.string,
+  //   quoteCurrency: PropTypes.string,
+  //   primaryColor: PropTypes.string,
+  // };
+  handlePress = (currency) => {
     const { type } = this.props.navigation.state.params;
     if (type === 'base') {
       this.props.dispatch(changeBaseCurrency(currency));
