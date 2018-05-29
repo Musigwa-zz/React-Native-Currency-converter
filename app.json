@@ -2,6 +2,9 @@
   "expo": {
     "sdkVersion": "26.0.0",
     "icon": "./app/resources/icons/appIcon.png",
-    "name": "CurrencyConverter"
+    "slug": "Converter",
+    "name": "CurrencyConverter",
+    "private": true,
+    "description": "This is a cross-platform mobile application that offers the real-time currency conversion of the world's popular currencies"
   }
 }
